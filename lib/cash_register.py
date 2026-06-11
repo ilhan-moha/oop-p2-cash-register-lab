@@ -1,5 +1,3 @@
-#!/usr/bin/env python3
-
 class CashRegister:
     def __init__(self, discount=0):
         self.discount = discount
@@ -24,10 +22,12 @@ class CashRegister:
     def apply_discount(self):
         if self.discount == 0:
             print("There is no discount to apply.")
-            return self.total
+            return
 
         self.total = round(self.total - (self.total * self.discount / 100), 2)
-        print(f"Success! New total: {self.total}")
+
+        print(f"Success! New total: {self.total:.2f}")
+
         return self.total
 
     def void_last_transaction(self):
